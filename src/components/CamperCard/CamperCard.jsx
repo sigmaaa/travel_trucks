@@ -1,7 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const CamperCard = ({ camper }) => {
+  const navigate = useNavigate();
+
   const {
+    id,
     name,
     price,
     location,
@@ -35,6 +39,10 @@ const CamperCard = ({ camper }) => {
     Water: water,
   };
 
+  const handleShowMore = () => {
+    navigate(`/catalog/${id}`);
+  };
+
   return (
     <div>
       {firstImage && (
@@ -48,11 +56,12 @@ const CamperCard = ({ camper }) => {
       <p>{description}</p>
 
       <ul>
-        {Object.entries(features).map(([label, isEnabled]) =>
-          isEnabled ? <li key={label}>{label}</li> : null
+        {Object.entries(features).map(
+          ([label, isEnabled]) => isEnabled && <li key={label}>{label}</li>
         )}
       </ul>
-      <button>Show more</button>
+
+      <button onClick={handleShowMore}>Show more</button>
     </div>
   );
 };

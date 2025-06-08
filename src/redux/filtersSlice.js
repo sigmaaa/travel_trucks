@@ -10,11 +10,6 @@ const filtersSlice = createSlice({
     bathroom: false,
     kitchen: false,
     TV: false,
-    radio: false,
-    refrigerator: false,
-    microwave: false,
-    gas: false,
-    water: false,
   },
   reducers: {
     changeFilter(state, action) {

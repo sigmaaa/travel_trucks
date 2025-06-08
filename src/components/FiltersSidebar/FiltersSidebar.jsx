@@ -8,18 +8,12 @@ const FiltersSidebar = () => {
   const filters = useSelector(selectFilters);
   const [, setSearchParams] = useSearchParams();
 
-  const allForms = ["van", "fully integrated", "alcove"];
-  const allEquipment = [
-    "AC",
-    "kitchen",
-    "bathroom",
-    "TV",
-    "radio",
-    "microwave",
-    "gas",
-    "water",
-    "refrigerator",
+  const allForms = [
+    { label: "Van", value: "panelTruck" },
+    { label: "Fully Integrated", value: "fullyIntegrated" },
+    { label: "Alcove", value: "alcove" },
   ];
+  const allEquipment = ["automatic", "AC", "kitchen", "bathroom", "TV"];
 
   const handleLocationChange = (e) => {
     dispatch(changeFilter({ key: "location", value: e.target.value }));
@@ -31,17 +25,22 @@ const FiltersSidebar = () => {
   };
 
   const toggleEquipment = (item) => {
-    dispatch(changeFilter({ key: item, value: !filters[item] }));
+    if (item === "automatic") {
+      const newValue = filters.transmission === "automatic" ? "" : "automatic";
+      dispatch(changeFilter({ key: "transmission", value: newValue }));
+    } else {
+      dispatch(changeFilter({ key: item, value: !filters[item] }));
+    }
   };
-
   const handleSearchClick = () => {
     const params = {
       ...(filters.location && { location: filters.location }),
       ...(filters.form && { form: filters.form }),
+      ...(filters.transmission && { transmission: filters.transmission }),
     };
 
     allEquipment.forEach((item) => {
-      if (filters[item]) {
+      if (item != "transmission" && filters[item]) {
         params[item] = "true";
       }
     });
@@ -65,26 +64,29 @@ const FiltersSidebar = () => {
           <label key={eq} style={{ display: "block" }}>
             <input
               type="checkbox"
-              checked={filters[eq]}
+              checked={
+                filters[eq] ||
+                (eq === "automatic" && filters.transmission === "automatic")
+              }
               onChange={() => toggleEquipment(eq)}
             />
-            {eq}
+            {eq.charAt(0).toUpperCase() + eq.slice(1)}
           </label>
         ))}
       </div>
 
       <p>Vehicle Type</p>
       <div>
-        {allForms.map((t) => (
+        {allForms.map(({ label, value }) => (
           <button
-            key={t}
-            onClick={() => handleFormSelect(t)}
+            key={value}
+            onClick={() => handleFormSelect(value)}
             style={{
-              fontWeight: filters.form === t ? "bold" : "normal",
+              fontWeight: filters.form === value ? "bold" : "normal",
               margin: "5px",
             }}
           >
-            {t}
+            {label}
           </button>
         ))}
       </div>
