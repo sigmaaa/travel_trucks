@@ -11,7 +11,13 @@ const campersSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    clearCampers(state) {
+      state.items = [];
+      state.total = 0;
+      state.currentPage = 0;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
@@ -53,4 +59,5 @@ export const selectCurrentPage = (state) => state.campers.currentPage;
 export const selectIsLoading = (state) => state.campers.isLoading;
 export const selectError = (state) => state.campers.error;
 
+export const { clearCampers } = campersSlice.actions;
 export default campersSlice.reducer;

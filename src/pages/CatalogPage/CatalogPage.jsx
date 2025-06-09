@@ -18,7 +18,7 @@ function CatalogPage() {
       filters[key] = value === "true" ? true : value;
       dispatch(changeFilter({ key, value: filters[key] }));
     }
-    console.log(filters);
+
     dispatch(
       fetchCampers({
         page: 1,

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { selectFilters, changeFilter } from "../../redux/filtersSlice";
+import { clearCampers } from "../../redux/campersSlice";
 import css from "./FiltersSidebar.module.css";
 
 const FiltersSidebar = () => {
@@ -46,6 +47,7 @@ const FiltersSidebar = () => {
       }
     });
 
+    dispatch(clearCampers());
     setSearchParams(params);
   };
 
