@@ -86,20 +86,6 @@ a {
   text-decoration: inherit;
 }
 
-a:hover {
-}
-
 body {
   margin: 0 auto;
-}
-
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
-h1 {
-}
-
-h2 {
 }

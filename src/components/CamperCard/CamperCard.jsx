@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import css from "./CamperCard.module.css";
 import Categories from "../Categories/Categories";
 import Rating from "../Rating/Rating";
+import Favorite from "../Favorite/Favorite";
 
 const CamperCard = ({ camper }) => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const CamperCard = ({ camper }) => {
         <div className={css.header}>
           <h2 className={css.name}>{name}</h2>
           <p className={css.price}>€{price}.00</p>
+          <Favorite id={id} />
         </div>
 
         <Rating rating={rating} reviews={reviews} location={location} />

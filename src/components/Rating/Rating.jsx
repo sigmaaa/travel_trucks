@@ -14,11 +14,11 @@ const Rating = ({ rating, reviews, location }) => {
                 >
                     <use href={"/icons.svg#star"} />
                 </svg>
+                <p>
+                    {rating}
+                    {reviews.length > 0 && `(${reviews.length} Reviews)`}
+                </p>
             </div>
-            <p>
-                {rating}
-                {reviews.length > 0 && `(${reviews.length} Reviews)`}
-            </p>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className={css.iconMap}
