@@ -29,9 +29,9 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgb(var(--var-badges));
+  background-color: rgb(var(--clr-card));
 
-  color: rgb(var(--var-button));
+  color: rgb(var(--clr-accent));
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: start;
 
-  color: rgb(var(--var-main));
+  color: rgb(var(--clr-main));
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -55,15 +55,15 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
-  color: rgb(var(--var-text));
+  color: rgb(var(--clr-text));
   text-align: left;
   max-width: 600px;
 }
 
 .filledStar {
-  fill: rgb(var(--var-rating));
+  fill: rgb(var(--clr-rating));
 }
 
 .emptyStar {
-  fill: rgb(var(--var-badges));
+  fill: rgb(var(--clr-card));
 }

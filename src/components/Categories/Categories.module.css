@@ -1,6 +1,5 @@
 .icon {
-  /* fill: rgb(var(--var-main)); */
-  stroke: rgb(var(--var-main));
+  stroke: rgb(var(--clr-main));
 }
 
 .container {
@@ -18,5 +17,5 @@
   padding: 12px 18px;
 
   border-radius: 100px;
-  background-color: rgb(var(--var-badges));
+  background-color: rgb(var(--clr-card));
 }

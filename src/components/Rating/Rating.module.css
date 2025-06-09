@@ -16,5 +16,5 @@
 }
 
 .iconStar {
-  fill: rgb(var(--var-rating));
+  fill: rgb(var(--clr-rating));
 }

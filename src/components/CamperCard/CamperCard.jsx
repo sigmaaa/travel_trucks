@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./CamperCard.module.css";
 import Categories from "../Categories/Categories";

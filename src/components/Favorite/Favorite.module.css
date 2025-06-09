@@ -9,10 +9,10 @@
 }
 
 .active {
-  fill: rgb(var(--var-button));
+  fill: rgb(var(--clr-accent));
   
 }
 
 .notActive {
-  fill: rgb(var(--var-main));
+  fill: rgb(var(--clr-main));
 }

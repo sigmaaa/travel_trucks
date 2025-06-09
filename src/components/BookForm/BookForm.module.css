@@ -1,5 +1,5 @@
 .container {
-  border: 1px solid rgb(var(--var-gray-light));
+  border: 1px solid rgb(var(--clr-muted-light));
   width: 641px;
   border-radius: 10px;
   height: 100%;
@@ -8,7 +8,7 @@
 }
 
 .title {
-  color: rgb(var(--var-main));
+  color: rgb(var(--clr-main));
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -16,7 +16,7 @@
 }
 
 .desc {
-  color: rgb(var(--var-gray));
+  color: rgb(var(--clr-muted));
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -39,8 +39,8 @@
   padding: 18px;
   width: 527px;
   border-radius: 10px;
-  background-color: rgb(var(--var-inputs));
-  color: rgb(var(--var-main));
+  background-color: rgb(var(--clr-input-bg));
+  color: rgb(var(--clr-main));
 
   font-size: 16px;
   font-weight: 400;
@@ -55,7 +55,7 @@
   position: absolute;
   top: 5px;
   right: 18px;
-  color: rgb(var(--var-button));
+  color: rgb(var(--clr-accent));
 }
 
 .sendBtn {
@@ -69,12 +69,12 @@
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: -0.08px;
-  color: rgb(var(--var-white));
-  background-color: rgb(var(--var-button));
+  color: rgb(var(--clr-bg));
+  background-color: rgb(var(--clr-accent));
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 .sendBtn:hover {
-  background-color: rgb(var(--var-button-hover));
+  background-color: rgb(var(--clr-accent-hover));
 }

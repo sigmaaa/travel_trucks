@@ -1,5 +1,5 @@
 .container {
-  background-color: rgb(var(--var-inputs));
+  background-color: rgb(var(--clr-input-bg));
   border-radius: 10px;
   padding: 44px 52px;
   display: flex;
@@ -8,7 +8,7 @@
 
 
 .title {
-  color: rgb(var(--var-main));
+  color: rgb(var(--clr-main));
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -31,7 +31,7 @@ text-align: left;
 .details {
   display: flex;
   flex-direction: column;
-  color: rgb(var(--var-main));
+  color: rgb(var(--clr-main));
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

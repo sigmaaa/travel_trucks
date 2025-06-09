@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 24px;
-  color: rgb(var(--var-main));
+  color: rgb(var(--clr-main));
   text-align: start;
 }
 
@@ -41,7 +41,7 @@
   -webkit-line-clamp: 1;
   line-clamp: 1;
   overflow: hidden;
-  color: rgb(var(--var-text));
+  color: rgb(var(--clr-text));
   line-height: 1.5;
   margin: 24px 0px;
 }
@@ -55,13 +55,13 @@
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: -0.08px;
-  color: rgb(var(--var-white));
-  background-color: rgb(var(--var-button));
+  color: rgb(var(--clr-bg));
+  background-color: rgb(var(--clr-accent));
   cursor: pointer;
   transition: border-color 0.25s;
   margin-top: 24px;
 }
 
 .showMoreBtn:hover {
-  background-color: rgb(var(--var-button-hover));
+  background-color: rgb(var(--clr-accent-hover));
 }

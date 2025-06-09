@@ -40,7 +40,7 @@
 }
 
 .description {
-  color: rgb(var(--var-text));
+  color: rgb(var(--clr-text));
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;

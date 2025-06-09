@@ -47,17 +47,17 @@ textarea {
 
 :root {
   /* Variables */
-  --var-white: 255, 255, 255;
-  --var-badges: 242, 244, 247;
-  --var-button: 228, 72, 72;
-  --var-button-hover: 216, 67, 67;
-  --var-gray: 108, 113, 123;
-  --var-gray-light: 218, 221, 225;
-  --var-gray-100: 242, 244, 247;
-  --var-inputs: 247, 247, 247;
-  --var-main: 16, 24, 40;
-  --var-rating: 255, 197, 49;
-  --var-text: 71, 84, 103;
+  --clr-bg: 255, 255, 255;
+  --clr-card: 242, 244, 247;
+  --clr-accent: 228, 72, 72;
+  --clr-accent-hover: 216, 67, 67;
+  --clr-muted: 108, 113, 123;
+  --clr-muted-light: 218, 221, 225;
+  --clr-muted-100: 242, 244, 247;
+  --clr-input-bg: 247, 247, 247;
+  --clr-main: 16, 24, 40;
+  --clr-rating: 255, 197, 49;
+  --clr-text: 71, 84, 103;
 
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -66,8 +66,8 @@ textarea {
   font-style: normal;
   letter-spacing: 0.04em;
 
-  color: rgb(var(--var-text));
-  background-color: rgb(var(--var-white));
+  color: rgb(var(--clr-text));
+  background-color: rgb(var(--clr-bg));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

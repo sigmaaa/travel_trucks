@@ -4,8 +4,8 @@
   gap: 450px;
   padding: 24px 64px;
 
-  background-color: rgb(var(--var-inputs));
-  border-bottom: 1px solid rgb(var(--var-badges));
+  background-color: rgb(var(--clr-input-bg));
+  border-bottom: 1px solid rgb(var(--clr-card));
 }
 
 .logo {
@@ -17,5 +17,5 @@
 }
 
 .active {
-  color: rgb(var(--var-button-hover));
+  color: rgb(var(--clr-accent-hover));
 }

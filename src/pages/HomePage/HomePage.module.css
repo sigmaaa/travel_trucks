@@ -3,7 +3,7 @@
   background: linear-gradient(0deg, #0003, #0003),
     url(/images/Hero-bg.jpg) no-repeat;
   text-align: start;
-  color: rgb(var(--var-inputs));
+  color: rgb(var(--clr-input-bg));
   max-width: 1440px;
   background-size: cover;
 }
@@ -43,12 +43,12 @@
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: -0.08px;
-  color: rgb(var(--var-white));
-  background-color: rgb(var(--var-button));
+  color: rgb(var(--clr-bg));
+  background-color: rgb(var(--clr-accent));
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 .HeroBtn:hover {
-  background-color: rgb(var(--var-button-hover));
+  background-color: rgb(var(--clr-accent-hover));
 }
