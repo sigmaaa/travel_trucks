@@ -3,6 +3,7 @@ import { useId } from "react";
 import * as Yup from "yup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import css from "./BookForm.module.css";
 
 const BookSchema = Yup.object().shape({
   name: Yup.string()
@@ -34,46 +35,70 @@ const BookForm = () => {
   };
 
   return (
-    <>
-      <h3>Book your campervan now</h3>
-      <p>Stay connected! We are always ready to help you.</p>
+    <section className={css.container}>
+      <div className={css.header}>
+        <h3 className={css.title}>Book your campervan now</h3>
+        <p className={css.desc}>Stay connected! We are always ready to help you.</p>
+      </div>
 
       <Formik
         initialValues={initialValues}
         validationSchema={BookSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <div>
-            <label htmlFor={nameId}>Name</label>
-            <Field type="text" name="name" id={nameId} />
-            <ErrorMessage name="name" component="div" />
-          </div>
+        <Form className={css.form}>
+          <label className={css.label} htmlFor={nameId}>
+            <Field
+              className={css.input}
+              type="text"
+              name="name"
+              id={nameId}
+              placeholder="Name*"
+            />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </label>
 
-          <div>
-            <label htmlFor={emailId}>Email</label>
-            <Field type="email" name="email" id={emailId} />
-            <ErrorMessage name="email" component="div" />
-          </div>
+          <label className={css.label} htmlFor={emailId}>
+            <Field
+              className={css.input}
+              type="email"
+              name="email"
+              id={emailId}
+              placeholder="Email*"
+            />
+            <ErrorMessage name="email" component="span" className={css.error} />
+          </label>
 
-          <div>
-            <label htmlFor={dateId}>Booking Date</label>
-            <Field type="date" name="date" id={dateId} />
-            <ErrorMessage name="date" component="div" />
-          </div>
+          <label className={css.label} htmlFor={dateId}>
+            <Field
+              className={css.input}
+              type="date"
+              name="bookingDate"
+              id={dateId}
+            />
+            <ErrorMessage name="bookingDate" component="span" className={css.error} />
+          </label>
 
-          <div>
-            <label htmlFor={commentId}>Comment</label>
-            <Field as="textarea" name="comment" id={commentId} rows="4" />
-            <ErrorMessage name="comment" component="div" />
-          </div>
+          <label className={css.label} htmlFor={commentId}>
+            <Field
+              className={`${css.input} ${css.textarea}`}
+              as="textarea"
+              name="comment"
+              id={commentId}
+              placeholder="Comment"
+              rows="4"
+            />
+            <ErrorMessage name="comment" component="span" className={css.error} />
+          </label>
 
-          <button type="submit">Send</button>
+          <button className={css.sendBtn} type="submit">
+            Send
+          </button>
         </Form>
       </Formik>
 
       <ToastContainer position="top-center" autoClose={3000} />
-    </>
+    </section>
   );
 };
 

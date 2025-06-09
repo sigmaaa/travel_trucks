@@ -1,5 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import css from "./CamperCard.module.css";
+import Categories from "../Categories/Categories";
+import Rating from "../Rating/Rating";
 
 const CamperCard = ({ camper }) => {
   const navigate = useNavigate();
@@ -12,56 +15,41 @@ const CamperCard = ({ camper }) => {
     rating,
     description,
     gallery = [],
-    AC,
-    kitchen,
-    radio,
-    bathroom,
-    refrigerator,
-    microwave,
-    gas,
-    water,
-    transmission,
-    engine,
+    reviews,
   } = camper;
 
   const firstImage = gallery.length > 0 ? gallery[0].thumb : "";
 
-  const features = {
-    Automatic: transmission === "automatic",
-    AC,
-    Petrol: engine === "petrol",
-    Kitchen: kitchen,
-    Radio: radio,
-    Bathroom: bathroom,
-    Refrigerator: refrigerator,
-    Microwave: microwave,
-    Gas: gas,
-    Water: water,
-  };
 
   const handleShowMore = () => {
-    navigate(`/catalog/${id}`);
+    navigate(id);
   };
 
   return (
-    <div>
+    <div className={css.container}>
       {firstImage && (
-        <img src={firstImage} alt={name} width={300} height="auto" />
+        <img className={css.image}
+          src={firstImage}
+          alt={name}
+          width="292px"
+          height="320px"
+        />
       )}
+      <div>
+        <div className={css.header}>
+          <h2 className={css.name}>{name}</h2>
+          <p className={css.price}>€{price}.00</p>
+        </div>
 
-      <h3>{name}</h3>
-      <p>€{price}</p>
-      <p>{rating} stars</p>
-      <p>{location}</p>
-      <p>{description}</p>
+        <Rating rating={rating} reviews={reviews} location={location} />
+        <div className={css.description}>
+          <p>{description}</p>
+        </div>
 
-      <ul>
-        {Object.entries(features).map(
-          ([label, isEnabled]) => isEnabled && <li key={label}>{label}</li>
-        )}
-      </ul>
+        <Categories camper={camper} />
 
-      <button onClick={handleShowMore}>Show more</button>
+        <button className={css.showMoreBtn} onClick={handleShowMore}>Show more</button>
+      </div>
     </div>
   );
 };

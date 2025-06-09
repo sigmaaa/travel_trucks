@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: start;
+  gap: 450px;
+  padding: 24px 64px;
+
+  background-color: rgb(var(--var-inputs));
+  border-bottom: 1px solid rgb(var(--var-badges));
+}
+
+.logo {
+}
+
+.navLinks {
+  display: inline-flex;
+  gap: 32px;
+}
+
+.active {
+  color: rgb(var(--var-button-hover));
+}

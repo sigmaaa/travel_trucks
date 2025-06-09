@@ -1,8 +1,8 @@
-import React from 'react'
+import { BeatLoader } from "react-spinners"
 
 function Loader() {
     return (
-        <div>Loader</div>
+        <div><BeatLoader color="#D84343" /></div>
     )
 }
 

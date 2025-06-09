@@ -1,19 +1,11 @@
 import { useSelector } from "react-redux";
 import { selectCamper } from "../../redux/campersSlice";
+import css from "./Features.module.css";
+import Categories from "../Categories/Categories";
 
 const Features = () => {
   const camper = useSelector(selectCamper);
   const {
-    transmission,
-    AC,
-    engine,
-    kitchen,
-    radio,
-    bathroom,
-    refrigerator,
-    microwave,
-    gas,
-    water,
     form,
     length,
     width,
@@ -31,36 +23,20 @@ const Features = () => {
     Consumption: consumption,
   };
 
-  const features = {
-    Automatic: transmission === "automatic",
-    AC,
-    Petrol: engine === "petrol",
-    Kitchen: kitchen,
-    Radio: radio,
-    Bathroom: bathroom,
-    Refrigerator: refrigerator,
-    Microwave: microwave,
-    Gas: gas,
-    Water: water,
-  };
   return (
-    <div>
-      <p>Features</p>
-      <ul>
-        {Object.entries(features).map(
-          ([label, isEnabled]) => isEnabled && <li key={label}>{label}</li>
-        )}
-      </ul>
-      <p>Vehicle details</p>
-      <hr></hr>
-      <ul>
+    <section className={css.container}>
+      <Categories camper={camper} />
+      <h3 className={css.title}>Vehicle details</h3>
+      <div className={css.divider}></div>
+      <ul className={css.details}>
         {Object.entries(details).map(([label, value]) => (
-          <li key={label}>
-            {label}-{value}
+          <li className={css.detail} key={label}>
+            <span>{label}</span>
+            <span>{value}</span>
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

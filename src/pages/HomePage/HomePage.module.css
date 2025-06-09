@@ -1,0 +1,54 @@
+.container {
+  padding: 260px 64px;
+  background: linear-gradient(0deg, #0003, #0003),
+    url(/images/Hero-bg.jpg) no-repeat;
+  text-align: start;
+  color: rgb(var(--var-inputs));
+  max-width: 1440px;
+  background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .container {
+    background: linear-gradient(0deg, #0003, #0003),
+      url(/images/Hero-bg@2x.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
+.title {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.66;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.slogan {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+
+.HeroBtn {
+  border-radius: 200px;
+  padding: 16px;
+  width: 173px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgb(var(--var-white));
+  background-color: rgb(var(--var-button));
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.HeroBtn:hover {
+  background-color: rgb(var(--var-button-hover));
+}

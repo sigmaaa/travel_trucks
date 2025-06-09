@@ -1,0 +1,105 @@
+@import "/node_modules/modern-normalize/modern-normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+:root {
+  /* Variables */
+  --var-white: 255, 255, 255;
+  --var-badges: 242, 244, 247;
+  --var-button: 228, 72, 72;
+  --var-button-hover: 216, 67, 67;
+  --var-gray: 108, 113, 123;
+  --var-gray-light: 218, 221, 225;
+  --var-gray-100: 242, 244, 247;
+  --var-inputs: 247, 247, 247;
+  --var-main: 16, 24, 40;
+  --var-rating: 255, 197, 49;
+  --var-text: 71, 84, 103;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.04em;
+
+  color: rgb(var(--var-text));
+  background-color: rgb(var(--var-white));
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+a:hover {
+}
+
+body {
+  margin: 0 auto;
+}
+
+/* button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+h1 {
+}
+
+h2 {
+}

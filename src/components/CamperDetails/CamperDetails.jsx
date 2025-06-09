@@ -1,28 +1,31 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectCamper } from "../../redux/campersSlice";
+import Rating from "../Rating/Rating";
+import css from "./CamperDetails.module.css";
 
-const CamperDetails = () => {
-  const camper = useSelector(selectCamper);
-
-  const { name, price, location, rating, description, gallery = [] } = camper;
+const CamperDetails = ({ camper }) => {
+  const { name, price, location, rating, reviews, description, gallery = [] } = camper;
 
   return (
     <div>
-      <p>{name}</p>
-      <p>{price}</p>
-      <p>{location}</p>
-      <p>{rating}</p>
-      {gallery.map(({ original }, index) => {
-        return (
-          <ul key={index}>
-            <li>
-              <img src={original} alt={`Gallery image ${index + 1}`} />
-            </li>
-          </ul>
-        );
-      })}
-      <p>{description}</p>
+      <section>
+        <div className={css.header}>
+          <h2 className={css.title}>{name}</h2>
+          <Rating rating={rating} reviews={reviews} location={location} />
+          <p className={css.price}>€{price}.00</p>
+        </div>
+        <ul className={css.gallery}>
+          {gallery.map(({ original }, index) => {
+            return (
+              <li key={index}>
+                <img className={css.image} src={original} alt={`image ${index + 1}`} height="312" />
+              </li>
+
+            );
+          })}
+        </ul>
+        <div>
+          <p className={css.description}>{description}</p>
+        </div>
+      </section>
     </div>
   );
 };

@@ -1,0 +1,80 @@
+.container {
+  border: 1px solid rgb(var(--var-gray-light));
+  width: 641px;
+  border-radius: 10px;
+  height: 100%;
+  padding: 44px 57px;
+  text-align: start;
+}
+
+.title {
+  color: rgb(var(--var-main));
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.desc {
+  color: rgb(var(--var-gray));
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 14px;
+}
+
+.label {
+  position: relative;
+}
+
+.input {
+  padding: 18px;
+  width: 527px;
+  border-radius: 10px;
+  background-color: rgb(var(--var-inputs));
+  color: rgb(var(--var-main));
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.textarea {
+  height: 118px;
+}
+
+.error {
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  color: rgb(var(--var-button));
+}
+
+.sendBtn {
+  border-radius: 200px;
+  padding: 16px;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 173px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  color: rgb(var(--var-white));
+  background-color: rgb(var(--var-button));
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.sendBtn:hover {
+  background-color: rgb(var(--var-button-hover));
+}
