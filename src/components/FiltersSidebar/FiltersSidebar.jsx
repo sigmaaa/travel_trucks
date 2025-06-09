@@ -1,14 +1,12 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { selectFilters, changeFilter } from "../../redux/filtersSlice";
-import { clearCampers } from "../../redux/campersSlice";
 import css from "./FiltersSidebar.module.css";
 
 const FiltersSidebar = () => {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilters);
-  const [, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
 
   const allForms = [
     { label: "Van", value: "panelTruck" },
@@ -47,7 +45,6 @@ const FiltersSidebar = () => {
       }
     });
 
-    dispatch(clearCampers());
     setSearchParams(params);
   };
 

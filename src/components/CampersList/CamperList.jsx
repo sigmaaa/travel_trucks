@@ -24,21 +24,28 @@ const CamperList = () => {
   return (
     <div>
       {isLoading && <Loader />}
-      {error && <p>error</p>}
-      <ul className={css.camperList}>
-        {campers.map((camper) => {
-          return (
-            <li key={camper.id} className={css.camperItem}>
-              <CamperCard camper={camper} />
-            </li>
-          );
-        })}
-      </ul>
+      {error && <p className={css.error}>Error: {error}</p>}
 
-      {campers.length < total && (
-        <button onClick={handleLoadMore} disabled={isLoading} className={css.loadMoreBtn}>
-          {isLoading ? "Loading..." : "Load more"}
-        </button>
+      {!error && (
+        <>
+          <ul className={css.camperList}>
+            {campers.map((camper) => (
+              <li key={camper.id} className={css.camperItem}>
+                <CamperCard camper={camper} />
+              </li>
+            ))}
+          </ul>
+
+          {campers.length < total && (
+            <button
+              onClick={handleLoadMore}
+              disabled={isLoading}
+              className={css.loadMoreBtn}
+            >
+              {isLoading ? "Loading..." : "Load more"}
+            </button>
+          )}
+        </>
       )}
     </div>
   );
